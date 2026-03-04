@@ -1,0 +1,1195 @@
+
+:root {
+  /* Brand Colors */
+  --primary-color: #8ee3f5;
+  --primary-light: #b4f1ff;
+  --primary-dark: #5ccad9;
+  --secondary-color: #769fb6;
+  --secondary-light: #9dbbae;
+  --secondary-dark: #5a8a9f;
+  
+  /* Accent Colors */
+  --accent-one: #9dbbae;
+  --accent-two: #d5d6aa;
+  
+  /* Base Colors */
+  --base-light: #e2dbbe;
+  --base: #d5d6aa;
+  --base-dark: #c4c799;
+  
+  /* Gradients */
+  --gradient-start: #e2dbbe;
+  --gradient-middle: #d5d6aa;
+  --gradient-end: #9dbbae;
+  
+  /* Text Colors */
+  --text-primary: #1E1E1E;
+  --text-secondary: #4A4A4A;
+  
+  /* New off-white background color */
+  --offwhite: #F8F8F8;
+  
+  /* Section title colors */
+  --title-whats-new: #8ee3f5; /* Light Blue */
+  --title-quick-links: #B7410E; /* Rust Red */
+  --title-safety-policies: #4B0082; /* Deep Purple */
+  --title-birthday: #228B22; /* Forest Green */
+  --title-carousel: #CC5500; /* Burnt Orange */
+  --title-safety-sop: #000080; /* Navy Blue */
+  --title-video-bytes: #8B4513; /* Saddle Brown */
+  --title-leaders-board: #800020; /* Burgundy */
+  
+  /* Birthday colors */
+  --birthday-pink: #ff3366;
+  --birthday-blue: #3366ff;
+  --birthday-red: #ff0000;
+  --birthday-yellow: #ffff00;
+
+
+  /* Page background color */
+  --page-background: #D4EDEB; /* Light gray */
+}
+
+/* Set the background color for the entire page */
+html, body {
+  background-color: var(--page-background) !important; /* Light gray background */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif; /* Adjust the font family as needed */
+}
+
+/* Replace all gradient backgrounds with off-white */
+[class$="-container"],
+.policy-item,
+.quick-links-item,
+.smaller-news-item,
+.video-item,
+.leaders-board-item,
+.no-leaders {
+  background: var(--offwhite) !important;
+  background-image: none !important;
+}
+
+/* Section title colors - all set to black */
+.whats-new-container h2,
+.quick-links-container h2,
+.safety-policies-container h2,
+.carousel-container h2,
+.safety-sop-container h2,
+.video-bytes-container h2,
+.leaders-board-container h2,
+.safety-snapshots-container h2 {
+  color: var(--text-primary); /* Black text color */
+}
+
+/* Birthday container h2 styling with multicolor animation */
+.birthday-container h2 {
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: birthdayColors 6s ease-in-out infinite, float 4s ease-in-out infinite;
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+}
+
+.bottom-row{
+  margin-bottom: 4rem;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes softGlow {
+  0% { color: #FF5733; } /* Red-Orange */
+  20% { color: #33FF57; } /* Green */
+  40% { color: #3357FF; } /* Blue */
+  60% { color: #F033FF; } /* Purple */
+  80% { color: #FF33F0; } /* Pink */
+  100% { color: #FF5733; } /* Back to Red-Orange */
+}
+
+@keyframes birthdayColors {
+  0% { color: var(--birthday-pink); } /* Pink */
+  25% { color: var(--birthday-blue); } /* Blue */
+  50% { color: var(--birthday-red); } /* Red */
+  75% { color: var(--birthday-yellow); } /* Yellow */
+  100% { color: var(--birthday-pink); } /* Back to Pink */
+}
+
+
+.header-bar {
+  height: 4px;
+}
+
+.header {
+  background-color:  #022AF2;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.25rem 1.0rem !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+  border-bottom: none !important;
+  justify-content: space-between;
+}
+
+.header-title{
+  width: fit-content;
+}
+
+.header img {
+  width: 112px !important;
+  height: auto;
+  object-fit: contain;
+  margin-right: 0 !important;
+}
+
+.header h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 3.5rem !important;
+  text-transform: uppercase;
+  font-family: 'Lora', serif !important;
+  font-weight: 800;
+  color: #ebedff;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ebedff;
+}
+
+.header-text h2, .header-text h3 {
+  color: #ebedff;
+  margin: 0;
+}
+
+/* Common container styles for all sections */
+.whats-new-container,
+.quick-links-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+  height: 500px;
+  background-color: #4281A4; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.policies-container,
+.safety-policies-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+/* Birthday container styles */
+.birthday-container {
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(30, 30, 30, 0.25);
+  box-sizing: border-box;
+  height: 500px;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--birthday-pink) 0%, var(--birthday-yellow) 25%, var(--birthday-blue) 50%, var(--birthday-red) 75%, var(--birthday-pink) 100%) !important;
+  animation: gradientBG 15s ease infinite;
+  background-size: 400% 400% !important;
+  border: 3px solid var(--birthday-pink);
+}
+
+.birthday-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(255, 51, 102, 0.5), 0 12px 48px rgba(51, 102, 255, 0.5);
+}
+
+.birthday-container canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.birthday-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 2px dashed var(--birthday-blue);
+  box-shadow: inset 0 0 20px rgba(255, 51, 102, 0.3), 0 0 30px rgba(255, 255, 0, 0.3);
+}
+
+.birthday-message {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.birthday-message h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  animation: birthdayColors 4s ease-in-out infinite;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.birthday-message p {
+  color: var(--birthday-blue);
+  font-size: 1.1rem;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.birthday-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.birthday-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid var(--birthday-pink);
+  backdrop-filter: blur(4px);
+  animation: pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+.birthday-item span {
+  animation: birthdayColors 6s ease-in-out infinite;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.birthday-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.3);
+  border: 2px solid var(--birthday-red);
+}
+
+.no-birthday {
+  text-align: center;
+  color: var(--birthday-blue);
+  font-weight: bold;
+}
+
+.no-birthday-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid var(--birthday-yellow);
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
+}
+
+/* Grid layout styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.grid-cols-2 > * {
+  min-width: 0;
+}
+
+/* News section styles */
+.whats-new-container > p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  height: 1.1rem;
+}
+
+.whats-new-content,
+.quick-links-content {
+  display: grid;
+  gap: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin: 0;
+  height: calc(500px - 5rem);
+}
+
+.whats-new-content {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.highlighted-news-item,
+.smaller-news-items {
+  padding: 0 0.5rem;
+}
+
+.highlighted-news-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+}
+
+.smaller-news-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.1);
+}
+
+.highlighted-news-item {
+  font-size: 1.1rem;
+}
+
+.smaller-news-items {
+  font-size: 0.9rem;
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.smaller-news-item {
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.1);
+  transition: all 0.2s ease;
+}
+
+.smaller-news-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+}
+
+.smaller-news-text h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.smaller-news-text p {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Quick links styles */
+.quick-links-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.quick-links-item {
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.1);
+}
+
+.quick-links-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+}
+
+.quick-links-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.quick-links-item a img {
+  width: 80px;
+  height: 80px;
+  box-shadow: inset;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.quick-links-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Policies section styles */
+.policies-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.policy-item {
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 10px rgba(30, 30, 30, 0.1);
+}
+
+.policy-item h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.policy-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  box-shadow: inset 0 0 10px rgba(30, 30, 30, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.policy-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+}
+
+.policy-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Carousel container styles */
+.carousel-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+  height: 500px;
+  /*padding: 1.25rem;*/
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 1.25rem;
+}
+
+/* Safety corner styles */
+.safety-corner {
+  margin-top: 1.25rem;
+}
+
+.safety-snapshots-container,
+.safety-sop-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+  height: 500px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.safety-snapshots-container .carousel-images {
+  flex: 1;
+  height: calc(100% - 3rem);
+}
+
+.safety-snapshots-container .autoslider-container {
+  height: 100%;
+}
+
+.safety-sop-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Video bytes styles */
+.video-bytes-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+  height: 500px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 1.25rem;
+}
+
+.video-bytes-content {
+  flex: 1;
+  overflow: hidden;
+  height: calc(500px - 5rem);
+  position: relative;
+}
+
+.video-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #8ee3f5; /* Light Blue */
+  color: black; /* Black for better visibility */
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.video-nav:hover {
+  background-color: #5ccad9; /* Darker Light Blue */
+  transform: translateY(-50%) scale(1.1);
+}
+
+.video-nav.prev {
+  left: 10px;
+}
+
+.video-nav.next {
+  right: 10px;
+}
+
+.video-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-item-content {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+}
+
+.video-thumbnail-container {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow: hidden;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.video-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background-color: #8ee3f5; /* Light Blue */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: black; /* Black for better visibility */
+}
+
+.video-play-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.video-item:hover .video-thumbnail {
+  transform: scale(1.05);
+}
+
+.video-item:hover .video-play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-item h3 {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-align: center;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-url {
+  margin-top: 0.5rem;
+}
+
+.video-url a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background-color: var(--offwhite);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.video-url a:hover {
+  background-color: #F0F0F0;
+  color: var(--primary-dark);
+}
+
+/* Leaders board styles */
+.leaders-board-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+  height: 500px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 1.25rem;
+}
+
+.leaders-board-container > p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  height: 1.1rem;
+}
+
+.leaders-board-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin: 0;
+  height: calc(500px - 7rem);
+}
+
+.leaders-board-item {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.1);
+}
+
+.leaders-board-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+}
+
+.leaders-board-image {
+  width: 80%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 auto 0.5rem auto;
+  display: block;
+}
+
+.leaders-board-text {
+  padding: 0 0.5rem 0.5rem;
+}
+
+.leaders-board-text h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.leaders-board-text p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.no-leaders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.no-leaders p {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+
+/* Add margin to the last grid container to prevent ticker overlap */
+.flex.flex-col.p-4.bg-gray-100.min-h-screen > div.grid.grid-cols-2.gap-4:last-of-type {
+  margin-bottom: 4rem;
+}
+
+/* Section headers */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: 'Lora', serif !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: white;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply light blue background to specific section headings */
+.carousel-container h2,
+.whats-new-container h2,
+.quick-links-container h2,
+.video-bytes-container h2,
+.leaders-board-container h2,
+.wellness-wave-container h2,
+.wellness-tips-container h2,
+.welcome-onboard-container h2,
+.best-kaizens-container h2,
+.main-hoon-zimedaar-container h2,
+.csr-initiatives-container h2,
+.bosstomer-container h2,
+.elevate-iq-container h2,
+.victory-vault-container h2,
+.crown-collection-container h2,
+.happy-retirement-container h2,
+.anniversaries-container h2,
+.festive-mode-container h2,
+.employee-moments-container h2,
+.policies-container h2 {
+  background-color: #58bb5d; /* Columbia blue */
+  color: #000000; /* Black for better visibility */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /*padding: 0.6rem 1.2rem; /* Adjust padding as needed */
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 1.6rem; /* Adjust font size as needed */
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+/* Common container styles for all sections */
+.whats-new-container,
+.quick-links-container,
+.policies-container,
+.safety-policies-container,
+.carousel-container,
+.safety-snapshots-container,
+.safety-sop-container,
+.video-bytes-container,
+.leaders-board-container,
+.wellness-wave-container,
+.wellness-tips-container,
+.welcome-onboard-container,
+.best-kaizens-container,
+.main-hoon-zimedaar-container,
+.csr-initiatives-container,
+.bosstomer-container,
+.elevate-iq-container,
+.victory-vault-container,
+.crown-collection-container,
+.happy-retirement-container,
+.anniversaries-container,
+.festive-mode-container,
+.employee-moments-container,
+.celebrations-section {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+  box-sizing: border-box;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  border: 2px solid #E5D1B3; /* Light Beige */
+}
+
+
+/* Reset styling for Birthday Container and header */
+.birthday-container h2{
+  background-color: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+
+/* Safety Corner main heading - bigger size */
+.safety-corner > h2 {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  font-size: 2rem; /* Increased font size */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Apply light blue background to Safety Snapshots and Safety SOP container headings with bigger size */
+.safety-snapshots-container > h3,
+.safety-sop-container > h3 {
+  background-color: #03b2c9; /* Light Blue */
+  color: #000000; /* Black for better visibility */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.6rem 1.2rem; /* Increased padding */
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 1.6rem; /* Increased font size */
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+/* Ensure policy-item h3 elements inside safety-sop-container don't get the cadet blue styling */
+.safety-sop-container .policy-item h3 {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Override birthday container h2 animation */
+.birthday-container h2 {
+  animation: none;
+  text-shadow: none;
+}
+
+/* Style paragraph descriptions for components starting from row 6 */
+.wellness-wave-container > p,
+.wellness-tips-container > p,
+.victory-vault-container > p,
+.csr-initiatives-container > p,
+.welcome-onboard-container > p,
+.best-kaizens-container > p,
+.main-hoon-zimedaar-container > p,
+.crown-collection-container > p,
+.bosstomer-container > p,
+.elevate-iq-container > p,
+.happy-retirement-container > p,
+.anniversaries-container > p,
+.festive-mode-container > p,
+.employee-moments-container > p,
+.monthly-performance-container > p,
+.quarterly-performance-container > p {
+  text-align: center;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Performance corner styles */
+.performance-corner {
+  margin-top: 1.25rem;
+}
+
+.quarterly-performance-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.15);
+  height: 500px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.quarterly-performance-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Performance corner main heading - bigger size */
+.performance-corner > h2 {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  font-size: 2rem; /* Increased font size */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Celebrations section styles */
+.celebrations-section {
+  height: 600px;
+  margin-top: 1.25rem;
+  margin-bottom: 4rem;
+  position: relative;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #fad0c4 50%, #a18cd1 75%, #fbc2eb 100%);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  box-shadow: 0 8px 32px rgba(30, 30, 30, 0.25);
+}
+
+.celebrations-section > h2 {
+  background-color: transparent;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  animation: float 6s ease-in-out infinite, celebrationColors 8s ease-in-out infinite;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes celebrationColors {
+  0% { color: #FF5733; } /* Red-Orange */
+  25% { color: #33FF57; } /* Green */
+  50% { color: #3357FF; } /* Blue */
+  75% { color: #F033FF; } /* Purple */
+  100% { color: #FF5733; } /* Back to Red-Orange */
+}
+
+/* Adjust the grid layout for the celebrations section */
+.celebrations-section .grid-cols-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Make the celebrations carousels a bit smaller */
+.celebrations-section .carousel-container {
+  height: 400px;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 3px solid transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* Ensure the celebrations carousels don't get too squished */
+.celebrations-section .autoslider-container {
+  height: calc(100% - 5rem);
+}
+
+/* Add some special styling for the celebrations carousels */
+.happy-retirement-container {
+  border-color: #FF9A9E !important;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.anniversaries-container {
+  border-color: #A18CD1 !important;
+  animation: pulse 4s ease-in-out infinite 1s;
+}
+
+.festive-mode-container {
+  border-color: #FBC2EB !important;
+  animation: pulse 4s ease-in-out infinite 2s;
+}
+
+.employee-moments-container {
+  border-color: #FAD0C4 !important;
+  animation: pulse 4s ease-in-out infinite 3s;
+}
+
+.celebrations-section .carousel-container:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+/* Override the heading styles for celebrations carousels */
+.celebrations-section .carousel-container h2 {
+  background-color: transparent !important;
+  color: #333 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.celebrations-section .carousel-container p {
+  color: #555;
+  font-weight: 600;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* Add a special animation for the celebrations section */
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.celebrations-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.2) 50%, 
+    rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 8s infinite;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+/* Celebrations canvas styling */
+.celebrations-canvas {
+  margin-bottom: 4rem;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Make sure the celebrations content is above the canvas */
+.celebrations-section h2,
+.celebrations-section .grid {
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,50 @@
+.ticker {
+  position: fixed;
+  bottom: 1vh;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.25rem;
+  left: 0;
+  right: 0;
+  margin: 0 20px; /* Add margin on both sides */
+  z-index: 100;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: #022af2 !important; /* Darker gray background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important; /* Darker shadow for better visibility */
+  width: calc(100% - 40px); /* Adjust width to account for margins */
+}
+
+.ticker-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: ticker 18s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  color: #fff !important; /* Black text for better readability */
+  text-shadow: none !important;
+  transition: color 0.3s ease;
+  font-weight: 600 !important; /* Slightly bolder for better visibility */
+}
+
+.ticker-item:hover {
+  color: #333333 !important; /* Dark gray on hover */
+}
+
+.ticker-item:not(:last-child)::after {
+  content: '•';
+  margin: 0 1rem;
+  color: #555555 !important; /* Dark gray for better contrast with new color scheme */
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
